@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webservice
+  template:
+    metadata:
+      labels:
+        app: webservice
+    spec:
+      containers:
+      - name: webservice
+        image: registry.gitlab.com/atharva.inamdar07/cspark-packages-demo/pyservice:latest
+        ports:
+        - containerPort: 5000
