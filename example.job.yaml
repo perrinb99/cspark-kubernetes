@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: example-job
+spec:
+  template:
+    metadata:
+      name: example-job
+    spec:
+      containers:
+      - name: job-container
+        image: registry.gitlab.com/atharva.inamdar07/cspark-packages-demo/jobexample:latest
+      restartPolicy: Never
